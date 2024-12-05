@@ -3,6 +3,7 @@ from telnetlib import EC
 import cv2
 import numpy as np
 from appium.webdriver.common.appiumby import AppiumBy
+from selenium.common import TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
 from alpineQuest.utils.constants import TIMEOUT, BASE_PAGE
 
@@ -77,3 +78,11 @@ class BasePage:
             print(f'Clicked on button at ({click_x}, {click_y})')
         else:
             print('Invalid coordinates, cannot click.')
+
+    def wait_element(self, element):
+        try:
+            WebDriverWait(self.application, TIMEOUT).until(
+                EC.presence_of_element_located((AppiumBy.XPATH, element))
+            )
+        except TimeoutException as ex:
+            print("Exception has been thrown: " + str(ex))

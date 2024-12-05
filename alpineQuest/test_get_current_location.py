@@ -17,12 +17,12 @@ def test_get_current_location(application):
 
     assert modal_title.text == GPS_PAGE.TITLE, f'The title of the modal is not {GPS_PAGE.TITLE}'
 
-    # Step 3: Switch on GPS
+    # Step 4: Switch on GPS
     gps_switch = gps_page.fined_switch_location_button()
     gps_switch.click()
     assert gps_switch.text != GPS_PAGE.TEXT_OFF, "First switch did not change state or was not clicked."
     switch_on = gps_page.fined_and_click_location_gps_on_button()
     assert switch_on != "", "Real-time position is on"
 
-    # Step 4: Click GPS button and close modal
+    # Step 5: Click GPS button and close modal
     gps_page.close_gps_modal()

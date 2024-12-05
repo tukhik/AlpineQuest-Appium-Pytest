@@ -51,6 +51,36 @@ GPS_PAGE = PositioningPage(
     "OFF"
 )
 
-PLACE_MARKS = "PLACEMARKS"
-LOCAL_PLACE_MARKS = 'LOCAL PLACEMARKS'
-WAYPOINT = 'Waypoint'
+class PlaceMarks:
+    def __init__(self,
+                 CREATE_PLACE_MARK_BUTTON,
+                 MODAL_TITLE,
+                 LOCALE_MODAL_TITLE_SELECTOR,
+                 MENU_BUTTON_SELECTOR,
+                 WAYPOINT_TEXT_SELECTOR,
+                 INPUT_SELECTOR,
+                 PLACE_MARKS,
+                 WAYPOINT,
+                 LOCAL_MODAL_TITLE):
+        self.CREATE_PLACE_MARK_BUTTON = CREATE_PLACE_MARK_BUTTON
+        self.MODAL_TITLE = MODAL_TITLE
+        self.LOCALE_MODAL_TITLE_SELECTOR = LOCALE_MODAL_TITLE_SELECTOR
+        self.MENU_BUTTON_SELECTOR = MENU_BUTTON_SELECTOR
+        self.WAYPOINT_TEXT_SELECTOR = WAYPOINT_TEXT_SELECTOR
+        self.INPUT_SELECTOR = INPUT_SELECTOR
+        self.PLACE_MARKS = PLACE_MARKS
+        self.WAYPOINT = WAYPOINT
+        self.LOCALE_MODAL_TITLE = LOCAL_MODAL_TITLE
+
+PLACE_MARKS_PAGE = PlaceMarks(
+    '//android.widget.TextView[@text="Create a placemark"]',
+    '//android.widget.TextView[@text="PLACEMARKS"]',
+    '//android.widget.TextView[@text="LOCAL PLACEMARKS"]',
+    './images/place_marks.png',
+    '//android.widget.TextView[@text="Waypoint"]',
+    '//*[@text="Optional"]',
+    'PLACEMARKS',
+    'Waypoint',
+    "LOCAL PLACEMARKS"
+)
+

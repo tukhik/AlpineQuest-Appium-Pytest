@@ -20,9 +20,6 @@ class PositioningPage(BasePage):
     def click_gps_button(self, coordinates):
         return self.click_button_at_coordinates(coordinates)
 
-    def click_gps_button(self):
-        return self.click_button_at_coordinates(GPS_PAGE.MENU_BUTTON_SELECTOR)
-
     def fined_modal_title(self):
         return self.find(modal_title)
     
