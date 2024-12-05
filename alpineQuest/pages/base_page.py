@@ -2,10 +2,13 @@ import os
 from telnetlib import EC
 import cv2
 import numpy as np
+import pytesseract
+from PIL import Image
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.common import TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
 from alpineQuest.utils.constants import TIMEOUT, BASE_PAGE
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class BasePage:
@@ -86,3 +89,9 @@ class BasePage:
             )
         except TimeoutException as ex:
             print("Exception has been thrown: " + str(ex))
+
+    @staticmethod
+    def write_text_in_input(input_field, text):
+        input_field.clear()
+        input_field.send_keys(text)
+

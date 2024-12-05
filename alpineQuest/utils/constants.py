@@ -61,7 +61,13 @@ class PlaceMarks:
                  INPUT_SELECTOR,
                  PLACE_MARKS,
                  WAYPOINT,
-                 LOCAL_MODAL_TITLE):
+                 LOCAL_MODAL_TITLE,
+                 TEST_WAYPOINT_NAME,
+                 OK_BUTTON_SELECTOR,
+                 DISPLAYED_PLACE_MARKS_BUTTON,
+                 DISPLAYED_PLACE_MARKS_TEXT,
+                 CRATED_WAYPOINT,
+                 CLOSE_MODAL_ICON):
         self.CREATE_PLACE_MARK_BUTTON = CREATE_PLACE_MARK_BUTTON
         self.MODAL_TITLE = MODAL_TITLE
         self.LOCALE_MODAL_TITLE_SELECTOR = LOCALE_MODAL_TITLE_SELECTOR
@@ -71,6 +77,12 @@ class PlaceMarks:
         self.PLACE_MARKS = PLACE_MARKS
         self.WAYPOINT = WAYPOINT
         self.LOCALE_MODAL_TITLE = LOCAL_MODAL_TITLE
+        self.TEST_WAYPOINT_NAME = TEST_WAYPOINT_NAME
+        self.OK_BUTTON_SELECTOR = OK_BUTTON_SELECTOR
+        self.DISPLAYED_PLACE_MARKS_BUTTON = DISPLAYED_PLACE_MARKS_BUTTON
+        self.DISPLAYED_PLACE_MARKS_TEXT = DISPLAYED_PLACE_MARKS_TEXT
+        self.CRATED_WAYPOINT = CRATED_WAYPOINT
+        self.CLOSE_MODAL_ICON = CLOSE_MODAL_ICON
 
 PLACE_MARKS_PAGE = PlaceMarks(
     '//android.widget.TextView[@text="Create a placemark"]',
@@ -78,9 +90,15 @@ PLACE_MARKS_PAGE = PlaceMarks(
     '//android.widget.TextView[@text="LOCAL PLACEMARKS"]',
     './images/place_marks.png',
     '//android.widget.TextView[@text="Waypoint"]',
-    '//*[@text="Optional"]',
+    'android.widget.EditText',
     'PLACEMARKS',
     'Waypoint',
-    "LOCAL PLACEMARKS"
+    'LOCAL PLACEMARKS',
+    'TEST_WAYPOINT',
+    '//android.widget.Button[@resource-id="android:id/button1"]',
+    '//android.widget.TextView[@text="Displayed placemarks"]',
+    'Displayed placemarks',
+    '//android.widget.TextView[@text="TEST_WAYPOINT"]',
+    '//android.widget.ImageView[@content-desc="Close"]'
 )
 

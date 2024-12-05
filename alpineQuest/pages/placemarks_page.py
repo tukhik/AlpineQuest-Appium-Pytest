@@ -4,9 +4,13 @@ from alpineQuest.utils.constants import PLACE_MARKS_PAGE
 
 create_place_mark_text_selector = (AppiumBy.XPATH, PLACE_MARKS_PAGE.CREATE_PLACE_MARK_BUTTON)
 waypoint_selector = (AppiumBy.XPATH, PLACE_MARKS_PAGE.WAYPOINT_TEXT_SELECTOR)
-name_input_selector = (AppiumBy.XPATH,  PLACE_MARKS_PAGE.INPUT_SELECTOR)
+name_input_selector = (AppiumBy.CLASS_NAME,  PLACE_MARKS_PAGE.INPUT_SELECTOR)
 modal_title = (AppiumBy.XPATH, PLACE_MARKS_PAGE.MODAL_TITLE)
 secondary_modal_title = (AppiumBy.XPATH, PLACE_MARKS_PAGE.LOCALE_MODAL_TITLE_SELECTOR)
+ok_button = (AppiumBy.XPATH, PLACE_MARKS_PAGE.OK_BUTTON_SELECTOR)
+displayed_place_mark_text_selector = (AppiumBy.XPATH, PLACE_MARKS_PAGE.DISPLAYED_PLACE_MARKS_BUTTON)
+created_waypoint = (AppiumBy.XPATH, PLACE_MARKS_PAGE.CRATED_WAYPOINT)
+close_modal =(AppiumBy.XPATH, PLACE_MARKS_PAGE.CLOSE_MODAL_ICON)
 
 
 class PlaceMarks(BasePage):
@@ -44,6 +48,20 @@ class PlaceMarks(BasePage):
     def fined_name_input_selector(self):
         return self.find(name_input_selector)
 
-    def wait(self, element):
+    def wait_for_visible_element(self, element):
         return self.wait_element(element)
 
+    def find_ok_button(self):
+        return self.find(ok_button)
+
+    def write_waypoint_name(self, input_field, text):
+        return self.write_text_in_input(input_field, text)
+
+    def fined_displayed_place_marks(self):
+        return self.find(displayed_place_mark_text_selector)
+
+    def fined_created_waypoint(self):
+        return self.find(created_waypoint)
+
+    def find_close_modal_icon(self):
+        return self.find(close_modal)

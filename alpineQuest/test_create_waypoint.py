@@ -1,11 +1,6 @@
 from time import sleep
-from appium.webdriver.common.appiumby import AppiumBy
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
 
 from alpineQuest.pages.placemarks_page import PlaceMarks
-from alpineQuest.utils.constants import TIMEOUT
 from utils.constants import PLACE_MARKS_PAGE
 
 def test_create_waypoint(application):
@@ -25,13 +20,7 @@ def test_create_waypoint(application):
     # Step 4: Find create a placemark button
     create_place_mark_button = place_mark_page.fined_create_a_place_mark_button()
     create_place_mark_button.click()
-
-    try:
-        WebDriverWait(application, TIMEOUT).until(
-            EC.presence_of_element_located((AppiumBy.XPATH, PLACE_MARKS_PAGE.LOCALE_MODAL_TITLE_SELECTOR))
-        )
-    except TimeoutException as ex:
-        print("Exception has been thrown: " + str(ex))
+    place_mark_page.wait_for_visible_element(PLACE_MARKS_PAGE.LOCALE_MODAL_TITLE_SELECTOR)
     local_modal_title = place_mark_page.fined_local_modal_title()
 
     assert local_modal_title.text == PLACE_MARKS_PAGE.LOCALE_MODAL_TITLE, f'The title of the modal is not {PLACE_MARKS_PAGE.LOCALE_MODAL_TITLE}'
@@ -45,5 +34,32 @@ def test_create_waypoint(application):
     assert waypoint_modal_title.text == PLACE_MARKS_PAGE.WAYPOINT, f'The title of the modal is not {PLACE_MARKS_PAGE.WAYPOINT}'
 
     # Step 6:  Create waypoint
-    input_field = place_mark_page.fined_name_input_selector
+    input_field = place_mark_page.fined_name_input_selector()
+    place_mark_page.write_waypoint_name(input_field, PLACE_MARKS_PAGE.TEST_WAYPOINT_NAME)
+
+    ok_button = place_mark_page.find_ok_button()
+    ok_button.click()
+    sleep(2)
+    # Step 7: Find pleacemark icon
+    coordinates = place_mark_page.fined_place_marks_button()
+
+    # Step 8: Click on the pleacemark icon
+    place_mark_page.click_button_at_coordinates(coordinates)
+    modal_title = place_mark_page.fined_modal_title()
+    assert modal_title.text == PLACE_MARKS_PAGE.PLACE_MARKS, f'The title of the modal is not {PLACE_MARKS_PAGE.PLACE_MARKS}'
+
+    # Step 9: Find Displayed placemarks button
+    displayed_place_marks_button = place_mark_page.fined_displayed_place_marks()
+    assert displayed_place_marks_button.text == PLACE_MARKS_PAGE.DISPLAYED_PLACE_MARKS_TEXT,  f'The {PLACE_MARKS_PAGE.DISPLAYED_PLACE_MARKS_TEXT} button is not visible'
+
+    # Step 10: Click Displayed placemarks button
+    displayed_place_marks_button.click()
+
+    created_waypoint = place_mark_page.fined_created_waypoint()
+    assert created_waypoint.text == PLACE_MARKS_PAGE.TEST_WAYPOINT_NAME, f'The {PLACE_MARKS_PAGE.TEST_WAYPOINT_NAME} waypoint is not created'
+
+    # Step 11: Click x button and close modal
+    close_modal = place_mark_page.find_close_modal_icon()
+    close_modal.click()
+
 
