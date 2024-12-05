@@ -2,7 +2,6 @@ import os
 from telnetlib import EC
 import cv2
 import numpy as np
-from time import sleep
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.webdriver.support.wait import WebDriverWait
 from alpineQuest.utils.constants import TIMEOUT, BASE_PAGE
@@ -37,7 +36,7 @@ class BasePage:
 
     def capture_screenshot(self):
         screenshot = self.application.get_screenshot_as_png()
-        with open('./screenshots/screen.png', 'wb') as file:
+        with open(BASE_PAGE.SCREENSHOT, 'wb') as file:
             file.write(screenshot)
         
         
@@ -45,7 +44,7 @@ class BasePage:
         self.capture_screenshot()
 
         # Load the screenshot
-        screenshot = cv2.imread('./screenshots/screen.png')
+        screenshot = cv2.imread(BASE_PAGE.SCREENSHOT)
 
         # Load the button image
         button_image = cv2.imread(button_image_path)

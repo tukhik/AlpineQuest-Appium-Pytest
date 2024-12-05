@@ -1,6 +1,7 @@
 from time import sleep
 from alpineQuest.pages.gps_page import PositioningPage
-from utils.constants import GPS_PAGE_TITLE, OFF
+from utils.constants import GPS_PAGE
+
 
 def test_get_current_location(application):
     # Step 1: Open the app.
@@ -13,12 +14,12 @@ def test_get_current_location(application):
     gps_page.click_gps_button()
     sleep(1)
     modal_title = gps_page.fined_modal_title()
-    assert modal_title.text == GPS_PAGE_TITLE, f'The title of the modal is not {GPS_PAGE_TITLE}'
+    assert modal_title.text == GPS_PAGE.TITLE, f'The title of the modal is not {GPS_PAGE.TITLE}'
 
     # Step 3: Switch on GPS
     gps_switch = gps_page.fined_switch_location_button()
     gps_switch.click()
-    assert gps_switch.text != OFF, "First switch did not change state or was not clicked."
+    assert gps_switch.text != GPS_PAGE.TEXT_OFF, "First switch did not change state or was not clicked."
     switch_on = gps_page.fined_and_click_location_gps_on_button()
     assert switch_on != "", "Real-time position is on"
     sleep(1)
