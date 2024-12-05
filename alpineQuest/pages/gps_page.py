@@ -13,9 +13,15 @@ class PositioningPage(BasePage):
 
     def open_app(self):
         return self.open_application()
-    
+
+    def fined_gps_button(self):
+        return self.find_button_by_image(GPS_PAGE.MENU_BUTTON_SELECTOR)
+
+    def click_gps_button(self, coordinates):
+        return self.click_button_at_coordinates(coordinates)
+
     def click_gps_button(self):
-        return self.find_and_click_button_by_image(GPS_PAGE.MENU_BUTTON_SELECTOR)
+        return self.click_button_at_coordinates(GPS_PAGE.MENU_BUTTON_SELECTOR)
 
     def fined_modal_title(self):
         return self.find(modal_title)
@@ -23,11 +29,11 @@ class PositioningPage(BasePage):
     def fined_switch_location_button(self):
         return self.find(switch_off_selector)
 
-    
     def fined_and_click_location_gps_on_button(self):
         return self.find(switch_on_selector)
     
     def close_gps_modal(self):
-        return self.find_and_click_button_by_image(GPS_PAGE.CLOSE_MODAL_ICON)
+        coordinates = self.find_button_by_image(GPS_PAGE.CLOSE_MODAL_ICON)
+        return self.click_button_at_coordinates(coordinates)
 
     

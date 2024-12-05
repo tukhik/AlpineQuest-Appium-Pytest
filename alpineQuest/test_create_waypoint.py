@@ -7,7 +7,6 @@ def test_create_waypoint(application):
     place_mark_page = PlaceMarks(application)
     place_mark_page.open_app()
     # The app is successfully launched.
-    sleep(1)
 
     # Step 2: Click pleacemark icon
     place_mark_page.click_place_marks_button()

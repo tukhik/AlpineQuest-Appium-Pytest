@@ -38,11 +38,9 @@ class BasePage:
         screenshot = self.application.get_screenshot_as_png()
         with open(BASE_PAGE.SCREENSHOT, 'wb') as file:
             file.write(screenshot)
-        
-        
-    def find_and_click_button_by_image(self, button_image_path):
-        self.capture_screenshot()
 
+    def find_button_by_image(self, button_image_path, threshold=0.8):
+        self.capture_screenshot()
         # Load the screenshot
         screenshot = cv2.imread(BASE_PAGE.SCREENSHOT)
 
@@ -51,10 +49,11 @@ class BasePage:
 
         # Use OpenCV to find the button in the screenshot
         result = cv2.matchTemplate(screenshot, button_image, cv2.TM_CCOEFF_NORMED)
-        threshold = 0.8  # Adjust depending on how strict the match should be
+
+        # Get the location of all matches with the threshold value
         yloc, xloc = np.where(result >= threshold)
 
-        # If a match is found, click on it
+        # If matches are found, return the first match coordinates
         if len(xloc) > 0:
             # Get the location of the first match
             x = xloc[0]
@@ -65,11 +64,16 @@ class BasePage:
             click_x = x + button_width / 2
             click_y = y + button_height / 2
 
-            # Perform the click action
+            return click_x, click_y
+        else:
+            print('Button not found')
+            return None
+
+    def click_button_at_coordinates(self, coordinates):
+        if coordinates:
+            click_x, click_y = coordinates
+            # Perform the click action (using your app's tap method)
             self.application.tap([(click_x, click_y)])
             print(f'Clicked on button at ({click_x}, {click_y})')
         else:
-            print('Button not found')
-
-
-    
+            print('Invalid coordinates, cannot click.')
