@@ -20,7 +20,7 @@ def test_search_by_name(application):
     # Step 4: Find and click "search a location" button
     search_location_button = place_mark_page.find_search_location_button()
     search_location_button.click()
-    # place_mark_page.wait_for_visible_element(PLACE_MARKS_PAGE.SEARCH_BY_NAME_SELECTOR)
+    place_mark_page.wait_for_visible_element(PLACE_MARKS_PAGE.SEARCH_BY_NAME_SELECTOR)
 
     # Step 5: Find and click "search by name" button
     search_by_name_button = place_mark_page.find_search_by_name_button()

@@ -172,3 +172,20 @@ ZOOM_MAP_PAGE = ZoomMapPage(
     './images/minus.png'
 )
 
+class AlpineQuestPage:
+    def __init__(self, menu_button_selector, title_selector, title, exit_button_selector, exit_button):
+        self.MENU_BUTTON_SELECTOR = menu_button_selector
+        self.TITLE_SELECTOR = title_selector
+        self.TITLE = title
+        self.EXIT_BUTTON_SELECTOR = exit_button_selector
+        self.EXIT_BUTTON = exit_button
+
+ALPINE_QUEST_PAGE = AlpineQuestPage(
+    './images/app_icon.png',
+    './/android.widget.TextView[@text="ALPINEQUEST 2.3.9B"]',
+    'ALPINEQUEST 2.3.9B',
+    '//android.widget.TextView[@text="Exit"]',
+    'Exit'
+)
+
+
