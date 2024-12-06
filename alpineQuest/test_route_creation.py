@@ -3,25 +3,25 @@ from time import sleep
 from alpineQuest.pages.placemarks_page import PlaceMarks
 from utils.constants import PLACE_MARKS_PAGE
 
-def test_limit_route_creation(application):
+def test_route_creation(application):
     # Step 1: Open the app.
     place_mark_page = PlaceMarks(application)
     place_mark_page.open_app()
     # The app is successfully launched.
 
     # Step 2: Find pleacemark icon
-    coordinates = place_mark_page.fined_place_marks_button()
+    coordinates = place_mark_page.find_place_marks_button()
 
     # Step 3: Click on the pleacemark icon
     place_mark_page.click_button_at_coordinates(coordinates)
-    modal_title = place_mark_page.fined_modal_title()
+    modal_title = place_mark_page.find_modal_title()
     assert modal_title.text == PLACE_MARKS_PAGE.PLACE_MARKS, f'The title of the modal is not {PLACE_MARKS_PAGE.PLACE_MARKS}'
 
     # Step 4: Find create a placemark button
-    create_place_mark_button = place_mark_page.fined_create_a_place_mark_button()
+    create_place_mark_button = place_mark_page.find_create_a_place_mark_button()
     create_place_mark_button.click()
     place_mark_page.wait_for_visible_element(PLACE_MARKS_PAGE.LOCALE_MODAL_TITLE_SELECTOR)
-    local_modal_title = place_mark_page.fined_local_modal_title()
+    local_modal_title = place_mark_page.find_local_modal_title()
 
     assert local_modal_title.text == PLACE_MARKS_PAGE.LOCALE_MODAL_TITLE, f'The title of the modal is not {PLACE_MARKS_PAGE.LOCALE_MODAL_TITLE}'
 

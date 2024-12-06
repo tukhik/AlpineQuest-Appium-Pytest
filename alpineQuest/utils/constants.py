@@ -54,6 +54,7 @@ GPS_PAGE = PositioningPage(
 class PlaceMarks:
     def __init__(self,
                  create_place_mark_button,
+                 search_location_button,
                  modal_title,
                  locale_modal_title_selector,
                  menu_button_selector,
@@ -70,8 +71,16 @@ class PlaceMarks:
                  close_modal_icon,
                  rout_button_selector,
                  lock_icon,
-                 cancel_button_selector):
+                 cancel_button_selector,
+                 search_a_location,
+                 search_by_name_selector,
+                 location_input_selector,
+                 searched_location,
+                 search_button_selector,
+                 searched_information_selector,
+                 display_all_button):
         self.CREATE_PLACE_MARK_BUTTON = create_place_mark_button
+        self.SEARCH_LOCATION_BUTTON = search_location_button
         self.MODAL_TITLE = modal_title
         self.LOCALE_MODAL_TITLE_SELECTOR = locale_modal_title_selector
         self.MENU_BUTTON_SELECTOR = menu_button_selector
@@ -89,9 +98,18 @@ class PlaceMarks:
         self.ROUT_BUTTON_SELECTOR = rout_button_selector
         self.LOCK_ICON = lock_icon
         self.CANCEL_BUTTON_SELECTOR = cancel_button_selector
+        self.SEARCH_A_LOCATION = search_a_location,
+        self.SEARCH_BY_NAME_SELECTOR = search_by_name_selector,
+        self.LOCATION_INPUT_SELECTOR = location_input_selector
+        self.SEARCHED_LOCATION = searched_location
+        self.SEARCH_BUTTON_SELECTOR = search_button_selector
+        self.SEARCHED_INFORMATION_SELECTOR = searched_information_selector
+        self.DISPLAY_ALL_BUTTON = display_all_button
+
 
 PLACE_MARKS_PAGE = PlaceMarks(
     '//android.widget.TextView[@text="Create a placemark"]',
+    '//android.widget.TextView[@text="Search a location"]',
     '//android.widget.TextView[@text="PLACEMARKS"]',
     '//android.widget.TextView[@text="LOCAL PLACEMARKS"]',
     './images/place_marks.png',
@@ -108,7 +126,14 @@ PLACE_MARKS_PAGE = PlaceMarks(
     '//android.widget.ImageView[@content-desc="Close"]',
     '//android.widget.TextView[@text="Route"]',
     '//android.widget.ImageView[@resource-id="android:id/icon"]',
-    '//android.widget.Button[@resource-id="android:id/button2"]'
+    '//android.widget.Button[@resource-id="android:id/button2"]',
+    '//android.widget.TextView[@text="Search a location"]',
+    '//android.widget.TextView[@text="Search by name"]',
+    'android.widget.EditText',
+    'Vanadzor, Moskovyan 56/2a',
+    '//android.widget.Button[@resource-id="android:id/button1"]',
+    '//android.widget.TextView[@resource-id="psyberia.alpinequest.free:id/alertTitle"]',
+    '// android.widget.Button[ @ resource - id = "android:id/button3"]'
 )
 
 class CompassPage:
