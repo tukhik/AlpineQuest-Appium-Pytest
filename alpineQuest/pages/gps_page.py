@@ -26,6 +26,9 @@ class PositioningPage(BasePage):
     def find_switch_location_button(self):
         return self.find(switch_off_selector)
 
+    def find_element_by_xpath(self, xpath):
+        return self.find(xpath)
+
     def find_and_click_location_gps_on_button(self):
         return self.find(switch_on_selector)
     
@@ -33,4 +36,9 @@ class PositioningPage(BasePage):
         coordinates = self.find_button_by_image(GPS_PAGE.CLOSE_MODAL_ICON)
         return self.click_button_at_coordinates(coordinates)
 
+    def wait_for_visible_element(self, element):
+        return self.wait_element(element)
+
+    def waite_until_modal_closed(self, element):
+        return self.wait_element_is_not_visible(element)
     

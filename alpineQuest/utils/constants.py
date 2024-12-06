@@ -32,7 +32,7 @@ BASE_PAGE = BasePage(
 )
 
 class PositioningPage:
-    def __init__(self, switch_off, switch_on, modal_title, menu_button_selector, close_modal_icon, title, text_off):
+    def __init__(self, switch_off, switch_on, modal_title, menu_button_selector, close_modal_icon, title, text_off, switch_track_recorder_off, lock_icon, cancel_button):
         self.SWITCH_OFF = switch_off
         self.SWITCH_ON = switch_on
         self.MODAL_TITLE = modal_title
@@ -40,6 +40,9 @@ class PositioningPage:
         self.CLOSE_MODAL_ICON = close_modal_icon
         self.TITLE = title
         self.TEXT_OFF = text_off
+        self.SWITCH_TRACK_RECORDER_OFF = switch_track_recorder_off
+        self.LOCK_ICON = lock_icon
+        self.CANCEL_BUTTON = cancel_button
 
 GPS_PAGE = PositioningPage(
     '(//android.widget.Switch[@text="OFF"])[1]',
@@ -48,7 +51,10 @@ GPS_PAGE = PositioningPage(
     './images/position.png',
     './images/position_on_red.png',
     'POSITIONING',
-    "OFF"
+    "OFF",
+    '(//android.widget.Switch[@text="OFF"])[2]',
+    '//android.widget.ImageView[@resource-id="android:id/icon"]',
+    '//android.widget.ImageView[@resource-id="android:id/icon"]'
 )
 
 class PlaceMarks:
