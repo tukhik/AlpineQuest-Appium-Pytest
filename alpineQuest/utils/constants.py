@@ -128,3 +128,13 @@ COMPASS_PAGE = CompassPage(
     './images/green_compass_black_icon.png'
 )
 
+class ZoomMapPage:
+    def __init__(self, plus_button_selector, minus_button_selector):
+        self.PLUS_BUTTON_SELECTOR = plus_button_selector
+        self.MINUS_BUTTON_SELECTOR = minus_button_selector
+
+ZOOM_MAP_PAGE = ZoomMapPage(
+    './images/plus.png',
+    './images/minus.png'
+)
+
