@@ -102,3 +102,29 @@ PLACE_MARKS_PAGE = PlaceMarks(
     '//android.widget.ImageView[@content-desc="Close"]'
 )
 
+class CompassPage:
+    def __init__(self, COMPASS_BUTTON_SELECTOR, MODAL_TITLE_SELECTOR, TITLE, SCREENSHOT, SWITCH_OFF, SWITCH_ON, CLOSE_MODAL_ICON, TEXT_OFF, COMPASS_OFF, GREEN_COMPASS):
+        self.COMPASS_BUTTON_SELECTOR = COMPASS_BUTTON_SELECTOR
+        self.MODAL_TITLE_SELECTOR = MODAL_TITLE_SELECTOR
+        self.TITLE = TITLE
+        self.SCREENSHOT = SCREENSHOT
+        self.SWITCH_OFF = SWITCH_OFF
+        self.SWITCH_ON = SWITCH_ON
+        self.CLOSE_MODAL_ICON = CLOSE_MODAL_ICON
+        self.TEXT_OFF = TEXT_OFF
+        self.COMPASS_OFF = COMPASS_OFF
+        self.GREEN_COMPASS = GREEN_COMPASS
+
+COMPASS_PAGE = CompassPage(
+    './images/compass.png',
+    '//android.widget.TextView[@text="ORIENTATION"]',
+    'ORIENTATION',
+    './screenshots/screen.png',
+    '(//android.widget.Switch[@text="OFF"])',
+    '//android.widget.Switch[@text="ON"]',
+    './images/green_compass_icon.png',
+    'OFF',
+    './images/compass_off_icon.png',
+    './images/green_compass_black_icon.png'
+)
+
