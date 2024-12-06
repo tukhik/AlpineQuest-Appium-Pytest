@@ -90,6 +90,15 @@ class BasePage:
         except TimeoutException as ex:
             print("Exception has been thrown: " + str(ex))
 
+    def wait_element_is_not_visible(self, element_xpath):
+        try:
+            WebDriverWait(self.application, TIMEOUT).until(
+                EC.invisibility_of_element_located((AppiumBy.XPATH, element_xpath))
+            )
+            print(f"Element with XPath '{element_xpath}' is no longer visible.")
+        except TimeoutException as ex:
+            print(f"Exception: Element with XPath '{element_xpath}' is still visible after {TIMEOUT} seconds.")
+
     @staticmethod
     def write_text_in_input(input_field, text):
         input_field.clear()

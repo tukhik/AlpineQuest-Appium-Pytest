@@ -11,6 +11,9 @@ ok_button = (AppiumBy.XPATH, PLACE_MARKS_PAGE.OK_BUTTON_SELECTOR)
 displayed_place_mark_text_selector = (AppiumBy.XPATH, PLACE_MARKS_PAGE.DISPLAYED_PLACE_MARKS_BUTTON)
 created_waypoint = (AppiumBy.XPATH, PLACE_MARKS_PAGE.CRATED_WAYPOINT)
 close_modal =(AppiumBy.XPATH, PLACE_MARKS_PAGE.CLOSE_MODAL_ICON)
+rout_button_selector = (AppiumBy.XPATH, PLACE_MARKS_PAGE.ROUT_BUTTON_SELECTOR)
+lock_icon_selector = (AppiumBy.XPATH, PLACE_MARKS_PAGE.LOCK_ICON)
+cancel_button = (AppiumBy.XPATH, PLACE_MARKS_PAGE.CANCEL_BUTTON_SELECTOR)
 
 
 class PlaceMarks(BasePage):
@@ -65,3 +68,15 @@ class PlaceMarks(BasePage):
 
     def find_close_modal_icon(self):
         return self.find(close_modal)
+
+    def find_rout_button(self):
+        return self.find(rout_button_selector)
+
+    def find_lock_icon(self):
+        return self.find(lock_icon_selector)
+
+    def cancel_button(self):
+        return self.find(cancel_button)
+
+    def waite_until_modal_closed(self, element):
+        return self.wait_element_is_not_visible(element)

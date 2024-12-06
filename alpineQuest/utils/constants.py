@@ -67,7 +67,10 @@ class PlaceMarks:
                  displayed_place_marks_button,
                  displayed_place_marks_text,
                  crated_waypoint,
-                 close_modal_icon):
+                 close_modal_icon,
+                 rout_button_selector,
+                 lock_icon,
+                 cancel_button_selector):
         self.CREATE_PLACE_MARK_BUTTON = create_place_mark_button
         self.MODAL_TITLE = modal_title
         self.LOCALE_MODAL_TITLE_SELECTOR = locale_modal_title_selector
@@ -83,6 +86,9 @@ class PlaceMarks:
         self.DISPLAYED_PLACE_MARKS_TEXT = displayed_place_marks_text
         self.CRATED_WAYPOINT = crated_waypoint
         self.CLOSE_MODAL_ICON = close_modal_icon
+        self.ROUT_BUTTON_SELECTOR = rout_button_selector
+        self.LOCK_ICON = lock_icon
+        self.CANCEL_BUTTON_SELECTOR = cancel_button_selector
 
 PLACE_MARKS_PAGE = PlaceMarks(
     '//android.widget.TextView[@text="Create a placemark"]',
@@ -99,7 +105,10 @@ PLACE_MARKS_PAGE = PlaceMarks(
     '//android.widget.TextView[@text="Displayed placemarks"]',
     'Displayed placemarks',
     '//android.widget.TextView[@text="TEST_WAYPOINT"]',
-    '//android.widget.ImageView[@content-desc="Close"]'
+    '//android.widget.ImageView[@content-desc="Close"]',
+    '//android.widget.TextView[@text="Route"]',
+    '//android.widget.ImageView[@resource-id="android:id/icon"]',
+    '//android.widget.Button[@resource-id="android:id/button2"]'
 )
 
 class CompassPage:
