@@ -22,9 +22,9 @@ DESIRED_CAPS = {
 }
 
 class BasePage:
-    def __init__(self, ALPINE_QUEST_ELEMENT, SCREENSHOT):
-        self.ALPINE_QUEST_ELEMENT = ALPINE_QUEST_ELEMENT  # Attribute for make
-        self.SCREENSHOT = SCREENSHOT  # Attribute for model
+    def __init__(self, alpine_quest_element, screenshot):
+        self.ALPINE_QUEST_ELEMENT = alpine_quest_element  # Attribute for make
+        self.SCREENSHOT = screenshot  # Attribute for model
 
 BASE_PAGE = BasePage(
     '//android.widget.LinearLayout[@resource-id="psyberia.alpinequest.free:id/action_bar_root"]',
@@ -32,14 +32,14 @@ BASE_PAGE = BasePage(
 )
 
 class PositioningPage:
-    def __init__(self, SWITCH_OFF, SWITCH_ON, MODAL_TITLE, MENU_BUTTON_SELECTOR, CLOSE_MODAL_ICON, TITLE, TEXT_OFF):
-        self.SWITCH_OFF = SWITCH_OFF
-        self.SWITCH_ON = SWITCH_ON
-        self.MODAL_TITLE = MODAL_TITLE
-        self.MENU_BUTTON_SELECTOR = MENU_BUTTON_SELECTOR
-        self.CLOSE_MODAL_ICON = CLOSE_MODAL_ICON
-        self.TITLE = TITLE
-        self.TEXT_OFF = TEXT_OFF
+    def __init__(self, switch_off, switch_on, modal_title, menu_button_selector, close_modal_icon, title, text_off):
+        self.SWITCH_OFF = switch_off
+        self.SWITCH_ON = switch_on
+        self.MODAL_TITLE = modal_title
+        self.MENU_BUTTON_SELECTOR = menu_button_selector
+        self.CLOSE_MODAL_ICON = close_modal_icon
+        self.TITLE = title
+        self.TEXT_OFF = text_off
 
 GPS_PAGE = PositioningPage(
     '(//android.widget.Switch[@text="OFF"])[1]',
@@ -53,36 +53,36 @@ GPS_PAGE = PositioningPage(
 
 class PlaceMarks:
     def __init__(self,
-                 CREATE_PLACE_MARK_BUTTON,
-                 MODAL_TITLE,
-                 LOCALE_MODAL_TITLE_SELECTOR,
-                 MENU_BUTTON_SELECTOR,
-                 WAYPOINT_TEXT_SELECTOR,
-                 INPUT_SELECTOR,
-                 PLACE_MARKS,
-                 WAYPOINT,
-                 LOCAL_MODAL_TITLE,
-                 TEST_WAYPOINT_NAME,
-                 OK_BUTTON_SELECTOR,
-                 DISPLAYED_PLACE_MARKS_BUTTON,
-                 DISPLAYED_PLACE_MARKS_TEXT,
-                 CRATED_WAYPOINT,
-                 CLOSE_MODAL_ICON):
-        self.CREATE_PLACE_MARK_BUTTON = CREATE_PLACE_MARK_BUTTON
-        self.MODAL_TITLE = MODAL_TITLE
-        self.LOCALE_MODAL_TITLE_SELECTOR = LOCALE_MODAL_TITLE_SELECTOR
-        self.MENU_BUTTON_SELECTOR = MENU_BUTTON_SELECTOR
-        self.WAYPOINT_TEXT_SELECTOR = WAYPOINT_TEXT_SELECTOR
-        self.INPUT_SELECTOR = INPUT_SELECTOR
-        self.PLACE_MARKS = PLACE_MARKS
-        self.WAYPOINT = WAYPOINT
-        self.LOCALE_MODAL_TITLE = LOCAL_MODAL_TITLE
-        self.TEST_WAYPOINT_NAME = TEST_WAYPOINT_NAME
-        self.OK_BUTTON_SELECTOR = OK_BUTTON_SELECTOR
-        self.DISPLAYED_PLACE_MARKS_BUTTON = DISPLAYED_PLACE_MARKS_BUTTON
-        self.DISPLAYED_PLACE_MARKS_TEXT = DISPLAYED_PLACE_MARKS_TEXT
-        self.CRATED_WAYPOINT = CRATED_WAYPOINT
-        self.CLOSE_MODAL_ICON = CLOSE_MODAL_ICON
+                 create_place_mark_button,
+                 modal_title,
+                 locale_modal_title_selector,
+                 menu_button_selector,
+                 waypoint_text_selector,
+                 input_selector,
+                 place_marks,
+                 waypoint,
+                 local_modal_title,
+                 test_waypoint_name,
+                 ok_button_selector,
+                 displayed_place_marks_button,
+                 displayed_place_marks_text,
+                 crated_waypoint,
+                 close_modal_icon):
+        self.CREATE_PLACE_MARK_BUTTON = create_place_mark_button
+        self.MODAL_TITLE = modal_title
+        self.LOCALE_MODAL_TITLE_SELECTOR = locale_modal_title_selector
+        self.MENU_BUTTON_SELECTOR = menu_button_selector
+        self.WAYPOINT_TEXT_SELECTOR = waypoint_text_selector
+        self.INPUT_SELECTOR = input_selector
+        self.PLACE_MARKS = place_marks
+        self.WAYPOINT = waypoint
+        self.LOCALE_MODAL_TITLE = local_modal_title
+        self.TEST_WAYPOINT_NAME = test_waypoint_name
+        self.OK_BUTTON_SELECTOR = ok_button_selector
+        self.DISPLAYED_PLACE_MARKS_BUTTON = displayed_place_marks_button
+        self.DISPLAYED_PLACE_MARKS_TEXT = displayed_place_marks_text
+        self.CRATED_WAYPOINT = crated_waypoint
+        self.CLOSE_MODAL_ICON = close_modal_icon
 
 PLACE_MARKS_PAGE = PlaceMarks(
     '//android.widget.TextView[@text="Create a placemark"]',
@@ -103,17 +103,17 @@ PLACE_MARKS_PAGE = PlaceMarks(
 )
 
 class CompassPage:
-    def __init__(self, COMPASS_BUTTON_SELECTOR, MODAL_TITLE_SELECTOR, TITLE, SCREENSHOT, SWITCH_OFF, SWITCH_ON, CLOSE_MODAL_ICON, TEXT_OFF, COMPASS_OFF, GREEN_COMPASS):
-        self.COMPASS_BUTTON_SELECTOR = COMPASS_BUTTON_SELECTOR
-        self.MODAL_TITLE_SELECTOR = MODAL_TITLE_SELECTOR
-        self.TITLE = TITLE
-        self.SCREENSHOT = SCREENSHOT
-        self.SWITCH_OFF = SWITCH_OFF
-        self.SWITCH_ON = SWITCH_ON
-        self.CLOSE_MODAL_ICON = CLOSE_MODAL_ICON
-        self.TEXT_OFF = TEXT_OFF
-        self.COMPASS_OFF = COMPASS_OFF
-        self.GREEN_COMPASS = GREEN_COMPASS
+    def __init__(self, compass_button_selector, modal_title_selector, title, screenshot, switch_off, switch_on, close_modal_icon, text_off, compass_off, green_compass):
+        self.COMPASS_BUTTON_SELECTOR = compass_button_selector
+        self.MODAL_TITLE_SELECTOR = modal_title_selector
+        self.TITLE = title
+        self.SCREENSHOT = screenshot
+        self.SWITCH_OFF = switch_off
+        self.SWITCH_ON = switch_on
+        self.CLOSE_MODAL_ICON = close_modal_icon
+        self.TEXT_OFF = text_off
+        self.COMPASS_OFF = compass_off
+        self.GREEN_COMPASS = green_compass
 
 COMPASS_PAGE = CompassPage(
     './images/compass.png',
