@@ -27,7 +27,7 @@ class PositioningPage(BasePage):
         return self.find(switch_off_selector)
 
     def find_element_by_xpath(self, xpath):
-        return self.find(xpath)
+        return self.find((AppiumBy.XPATH, xpath))
 
     def find_and_click_location_gps_on_button(self):
         return self.find(switch_on_selector)

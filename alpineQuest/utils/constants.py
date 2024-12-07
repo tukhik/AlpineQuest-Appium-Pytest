@@ -54,7 +54,7 @@ GPS_PAGE = PositioningPage(
     "OFF",
     '(//android.widget.Switch[@text="OFF"])[2]',
     '//android.widget.ImageView[@resource-id="android:id/icon"]',
-    '//android.widget.ImageView[@resource-id="android:id/icon"]'
+    '//android.widget.Button[@resource-id="android:id/button2"]'
 )
 
 class PlaceMarks:
