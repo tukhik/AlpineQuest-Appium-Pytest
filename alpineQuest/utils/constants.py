@@ -23,8 +23,8 @@ DESIRED_CAPS = {
 
 class BasePage:
     def __init__(self, alpine_quest_element, screenshot):
-        self.ALPINE_QUEST_ELEMENT = alpine_quest_element  # Attribute for make
-        self.SCREENSHOT = screenshot  # Attribute for model
+        self.ALPINE_QUEST_ELEMENT = alpine_quest_element
+        self.SCREENSHOT = screenshot
 
 BASE_PAGE = BasePage(
     '//android.widget.LinearLayout[@resource-id="psyberia.alpinequest.free:id/action_bar_root"]',
