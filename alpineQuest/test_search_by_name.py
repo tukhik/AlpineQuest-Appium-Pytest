@@ -20,10 +20,9 @@ def test_search_by_name(application):
     # Step 4: Find and click "search a location" button
     search_location_button = place_mark_page.find_search_location_button()
     search_location_button.click()
-    place_mark_page.wait_for_visible_element(PLACE_MARKS_PAGE.SEARCH_BY_NAME_SELECTOR)
 
     # Step 5: Find and click "search by name" button
-    search_by_name_button = place_mark_page.find_search_by_name_button()
+    search_by_name_button = place_mark_page.search_by_xpath(PLACE_MARKS_PAGE.SEARCH_BY_NAME_BUTTON_SELECTOR)
     assert search_by_name_button is not None, "search_by_name_button is not found"
 
     search_by_name_button.click()
@@ -35,11 +34,11 @@ def test_search_by_name(application):
     place_mark_page.write_search_location_name(input_field, PLACE_MARKS_PAGE.SEARCHED_LOCATION)
 
     # Step 7: Find and click search button
-    search_button = place_mark_page.find_search_button()
+    search_button = place_mark_page.find_by_xpath(PLACE_MARKS_PAGE.SEARCH_SELECTOR)
     assert search_button is not None, "search_button is not found"
     search_button.click()
 
-    place_mark_page.wait_for_visible_element(PLACE_MARKS_PAGE.SEARCH_MODAL_TITLE_SELECTOR)
+    place_mark_page.wait_for_visible_element(PLACE_MARKS_PAGE.SEARCHED_INFORMATION_SELECTOR)
 
     # Step 8: Get find data
     searched_information = place_mark_page.find_searched_information_title()

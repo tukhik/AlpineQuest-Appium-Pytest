@@ -2,13 +2,12 @@ import os
 from telnetlib import EC
 import cv2
 import numpy as np
-import pytesseract
-from PIL import Image
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.common import TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
 from alpineQuest.utils.constants import TIMEOUT, BASE_PAGE
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class BasePage:
@@ -103,4 +102,8 @@ class BasePage:
     def write_text_in_input(input_field, text):
         input_field.clear()
         input_field.send_keys(text)
+
+    def long_press(self, element):
+        actions = ActionChains(self.application)
+        actions.click_and_hold(element).pause(2).release().perform()
 

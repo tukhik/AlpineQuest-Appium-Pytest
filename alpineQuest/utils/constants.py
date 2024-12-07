@@ -84,7 +84,12 @@ class PlaceMarks:
                  searched_location,
                  search_button_selector,
                  searched_information_selector,
-                 display_all_button):
+                 display_all_button,
+                 search_by_name_button_selector,
+                 search_selector,
+                 eye_icon_selector,
+                 delete_selector,
+                 yes_button_selector):
         self.CREATE_PLACE_MARK_BUTTON = create_place_mark_button
         self.SEARCH_LOCATION_BUTTON = search_location_button
         self.MODAL_TITLE = modal_title
@@ -111,6 +116,11 @@ class PlaceMarks:
         self.SEARCH_BUTTON_SELECTOR = search_button_selector
         self.SEARCHED_INFORMATION_SELECTOR = searched_information_selector
         self.DISPLAY_ALL_BUTTON = display_all_button
+        self.SEARCH_BY_NAME_BUTTON_SELECTOR = search_by_name_button_selector
+        self.SEARCH_SELECTOR = search_selector
+        self.EYE_ICON_SELECTOR = eye_icon_selector
+        self.DELETE_SELECTOR = delete_selector
+        self.YES_BUTTON_SELECTOR = yes_button_selector
 
 
 PLACE_MARKS_PAGE = PlaceMarks(
@@ -139,7 +149,12 @@ PLACE_MARKS_PAGE = PlaceMarks(
     'Vanadzor, Moskovyan 56/2a',
     '//android.widget.Button[@resource-id="android:id/button1"]',
     '//android.widget.TextView[@resource-id="psyberia.alpinequest.free:id/alertTitle"]',
-    '// android.widget.Button[ @ resource - id = "android:id/button3"]'
+    '// android.widget.Button[ @ resource - id = "android:id/button3"]',
+    '//android.widget.TextView[@text="Search by name"]',
+    '//android.widget.Button[@resource-id="android:id/button1"]',
+    '//android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout[3]/android.widget.ImageView',
+    '//android.widget.ListView/android.widget.LinearLayout[12]',
+    '//android.widget.Button[@resource-id="android:id/button1"]'
 )
 
 class CompassPage:

@@ -105,3 +105,9 @@ class PlaceMarks(BasePage):
 
     def find_display_all_button(self):
         return self.find(display_all)
+
+    def find_by_xpath(self, xpath):
+        return self.find((AppiumBy.XPATH, xpath))
+
+    def long_press_button(self, button_selector):
+        return self.long_press(button_selector)
