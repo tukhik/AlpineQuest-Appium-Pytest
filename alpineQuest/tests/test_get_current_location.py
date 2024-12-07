@@ -1,5 +1,5 @@
 from alpineQuest.pages.gps_page import PositioningPage
-from utils.constants import GPS_PAGE
+from alpineQuest.utils.constants import GPS_PAGE
 
 
 def test_get_current_location(application):

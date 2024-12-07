@@ -1,7 +1,7 @@
 from appium.webdriver.common.appiumby import AppiumBy
 
 from alpineQuest.pages.gps_page import PositioningPage
-from utils.constants import GPS_PAGE
+from alpineQuest.utils.constants import GPS_PAGE
 
 
 def test_track_recorder(application):

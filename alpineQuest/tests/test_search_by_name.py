@@ -1,7 +1,7 @@
 from time import sleep
 
 from alpineQuest.pages.placemarks_page import PlaceMarks
-from utils.constants import PLACE_MARKS_PAGE
+from alpineQuest.utils.constants import PLACE_MARKS_PAGE
 
 def test_search_by_name(application):
     # Step 1: Open the app.

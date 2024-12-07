@@ -1,6 +1,6 @@
 from alpineQuest.utils.constants import COMPASS_PAGE
 from alpineQuest.pages.compass_page import CompassPage
-from utils.constants import GPS_PAGE
+from alpineQuest.utils.constants import GPS_PAGE
 
 
 def test_verify_the_compass_function(application):

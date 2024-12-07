@@ -1,7 +1,7 @@
 import pytest
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
-from utils.constants import PLATFORM_NAME, AUTOMATOR_NAME, DEVICE_NAME, APP_ACTIVITY
+from alpineQuest.utils.constants import PLATFORM_NAME, AUTOMATOR_NAME, DEVICE_NAME, APP_ACTIVITY
 import sys
 import os
 

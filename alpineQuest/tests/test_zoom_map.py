@@ -1,7 +1,6 @@
 from time import sleep
 
 from alpineQuest.pages.zoom_map_page import ZoomMapPage
-from utils.constants import ZOOM_MAP_PAGE
 
 def test_zoom_map(application):
     # Step 1: Open the app.
@@ -14,6 +13,8 @@ def test_zoom_map(application):
     assert coordinates_plus_icon is not None, "coordinates_plus_icon is invalid or not found"
 
     # Step 3: Click + icon
+    zoom_map_page.click_plus_button(coordinates_plus_icon)
+    sleep(1)
     zoom_map_page.click_plus_button(coordinates_plus_icon)
     sleep(1)
 

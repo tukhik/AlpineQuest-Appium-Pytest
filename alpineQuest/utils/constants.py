@@ -28,7 +28,7 @@ class BasePage:
 
 BASE_PAGE = BasePage(
     '//android.widget.LinearLayout[@resource-id="psyberia.alpinequest.free:id/action_bar_root"]',
-    './screenshots/screen.png'
+    '../screenshots/screen.png'
 )
 
 class PositioningPage:
@@ -48,8 +48,8 @@ GPS_PAGE = PositioningPage(
     '(//android.widget.Switch[@text="OFF"])[1]',
     '//android.widget.Switch[@text="ON"]',
     '//*[@text="POSITIONING"]',
-    './images/position.png',
-    './images/position_on_red.png',
+    '../images/position.png',
+    '../images/position_on_red.png',
     'POSITIONING',
     "OFF",
     '(//android.widget.Switch[@text="OFF"])[2]',
@@ -128,7 +128,7 @@ PLACE_MARKS_PAGE = PlaceMarks(
     '//android.widget.TextView[@text="Search a location"]',
     '//android.widget.TextView[@text="PLACEMARKS"]',
     '//android.widget.TextView[@text="LOCAL PLACEMARKS"]',
-    './images/place_marks.png',
+    '../images/place_marks.png',
     '//android.widget.TextView[@text="Waypoint"]',
     'android.widget.EditText',
     'PLACEMARKS',
@@ -171,16 +171,16 @@ class CompassPage:
         self.GREEN_COMPASS = green_compass
 
 COMPASS_PAGE = CompassPage(
-    './images/compass.png',
+    '../images/compass.png',
     '//android.widget.TextView[@text="ORIENTATION"]',
     'ORIENTATION',
-    './screenshots/screen.png',
+    '../screenshots/screen.png',
     '(//android.widget.Switch[@text="OFF"])',
     '//android.widget.Switch[@text="ON"]',
-    './images/green_compass_icon.png',
+    '../images/green_compass_icon.png',
     'OFF',
-    './images/compass_off_icon.png',
-    './images/green_compass_black_icon.png'
+    '../images/compass_off_icon.png',
+    '../images/green_compass_black_icon.png'
 )
 
 class ZoomMapPage:
@@ -189,8 +189,8 @@ class ZoomMapPage:
         self.MINUS_BUTTON_SELECTOR = minus_button_selector
 
 ZOOM_MAP_PAGE = ZoomMapPage(
-    './images/plus.png',
-    './images/minus.png'
+    '../images/plus.png',
+    '../images/minus.png'
 )
 
 class AlpineQuestPage:
@@ -202,7 +202,7 @@ class AlpineQuestPage:
         self.EXIT_BUTTON = exit_button
 
 ALPINE_QUEST_PAGE = AlpineQuestPage(
-    './images/app_icon.png',
+    '../images/app_icon.png',
     './/android.widget.TextView[@text="ALPINEQUEST 2.3.9B"]',
     'ALPINEQUEST 2.3.9B',
     '//android.widget.TextView[@text="Exit"]',

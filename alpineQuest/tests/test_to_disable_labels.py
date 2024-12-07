@@ -1,8 +1,7 @@
 from time import sleep
-from alpineQuest.conftest import application
 
 from alpineQuest.pages.placemarks_page import PlaceMarks
-from utils.constants import PLACE_MARKS_PAGE
+from alpineQuest.utils.constants import PLACE_MARKS_PAGE
 
 
 class TouchAction:

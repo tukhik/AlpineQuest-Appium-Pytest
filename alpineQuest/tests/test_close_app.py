@@ -1,8 +1,7 @@
 from appium.webdriver.common.appiumby import AppiumBy
 
 from alpineQuest.pages.alpine_quest_page import AlpineQuestPage
-from utils.constants import ALPINE_QUEST_PAGE, APP_ACTIVITY
-
+from alpineQuest.utils.constants import ALPINE_QUEST_PAGE, APP_ACTIVITY
 
 def test_close_app(application):
     # Step 1: Open the app.
